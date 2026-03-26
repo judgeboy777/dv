@@ -1,0 +1,35 @@
+
+# Step 1: Load iris dataset  
+data("iris")  
+
+# Step 2: View dataset summary  
+summary(iris)  
+
+# Step 3: Boxplot of Sepal Length grouped by Species with color  
+boxplot(Sepal.Length ~ Species,  
+        data = iris,  
+        main = "Sepal Length by Species",  
+        xlab = "Species",  
+        ylab = "Sepal Length (cm)",  
+        col = c("lightblue", "salmon", "lightgreen"),  
+        border = "darkblue")  
+
+# Step 4: Boxplot of Petal Width grouped by Species with different colors  
+boxplot(Petal.Width ~ Species,  
+        data = iris,  
+        main = "Petal Width by Species",  
+        xlab = "Species",  
+        ylab = "Petal Width (cm)",  
+        col = c("skyblue", "orange", "lightpink"),  
+        border = "black")  
+
+# Step 5: Use RColorBrewer for color pale e  
+pale e <- rainbow(3) 
+
+# Step 6: Boxplot for Sepal Width grouped by Species using pale e  
+boxplot(Sepal.Width ~ Species,  
+        data = iris,  
+        main = "Sepal Width by Species",  
+        col = pale e,  
+        xlab = "Species",  
+        ylab = "Sepal Width (cm)") 

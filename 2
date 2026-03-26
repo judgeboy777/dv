@@ -1,0 +1,18 @@
+# Step 1: Load the dataset  
+data("AirPassengers")  
+
+# Step 2: Display basic details of the dataset  
+print("Summary of AirPassengers dataset:")  
+summary(AirPassengers)  
+
+# Step 3: Check the class (time-series object)  
+print(paste("Class of dataset:", class(AirPassengers)))  
+
+# Step 4: Visualize using a line chart  
+plot(AirPassengers,  
+     main = "Monthly International Air Passengers (1949–1960)",  
+     xlab = "Year",  
+     ylab = "Number of Passengers (in Thousands)",  
+     col = "blue",  
+     type = "l",   # Line chart  
+     lwd = 2)      # Line width

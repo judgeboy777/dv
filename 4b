@@ -1,0 +1,29 @@
+# Step 1: Load airquality dataset  
+data("airquality")  
+
+# Step 2: View dataset summary  
+summary(airquality)  
+
+# Step 3: Boxplots for Ozone, Solar.R, Wind, and Temp  
+par(mfrow = c(2, 2))  # 2x2 layout  
+
+boxplot(airquality$Ozone,  
+        main = "Ozone Concentration",  
+        ylab = "Ozone (ppb)",  
+        col = "lightblue")  
+
+boxplot(airquality$Solar.R,  
+        main = "Solar Radiation",  
+        ylab = "Solar.R (lang)",  
+        col = "lightgreen")
+boxplot(airquality$Wind,  
+        main = "Wind Speed",  
+        ylab = "Wind (mph)",  
+        col = "lightyellow")  
+
+boxplot(airquality$Temp,  
+        main = "Temperature",  
+        ylab = "Temperature (°F)",  
+        col = "lightpink")  
+
+par(mfrow = c(1, 1))  # Reset layout

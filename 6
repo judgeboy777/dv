@@ -1,0 +1,26 @@
+# Install and Load required packages
+install.packages("hexbin")
+install.packages("vcd")
+library(ggplot2)
+library(hexbin)
+library(vcd) # For mosaic plot
+# Load diamonds dataset from ggplot2
+data("diamonds")
+# Hexbin plot: carat vs price
+ggplot(diamonds, aes(x = carat, y = price)) +
+ stat_binhex(bins = 50) +
+ scale_fill_gradient(low = "lightblue", high = "darkblue") +
+ labs(title = "Hexbin Plot: Carat vs Price",
+ x = "Carat",
+ y = "Price")
+# Load HairEyeColor dataset (built-in)
+data("HairEyeColor")
+# Convert to data frame
+hair_eye_df <- as.data.frame(HairEyeColor)
+
+# Mosaic plot for categorical data
+mosaicplot(~ Hair + Eye,
+ data = hair_eye_df,
+ main = "Mosaic Plot: Hair Color vs Eye Color",
+ col = rainbow(8),
+ border = "black") 

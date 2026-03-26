@@ -1,0 +1,15 @@
+# Load the built-in HairEyeColor dataset 
+data("HairEyeColor") 
+
+# View the dataset 
+HairEyeColor 
+
+# Convert the table to a data frame (optional) 
+hair_eye_df <- as.data.frame(HairEyeColor) 
+
+# Create a mosaic plot 
+mosaicplot(HairEyeColor, 
+           main = "Mosaic Plot of Hair Color vs Eye Color", 
+           xlab = "Hair Color", 
+           ylab = "Eye Color", 
+           color = TRUE)

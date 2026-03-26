@@ -1,0 +1,11 @@
+data("mtcars")
+#Summary of dataset
+summary(mtcars) 
+
+# Normalize the data (optional for better heatmap visualization)
+mtcars_scaled <- scale(mtcars)
+# Heatmap using base R
+heatmap(mtcars_scaled,
+        main = "Heatmap of mtcars Dataset",
+        col = heat.colors(256),
+        scale = "none")

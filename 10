@@ -1,0 +1,30 @@
+#install required libraries  
+install.packages("scatterplot3d")  
+install.packages("lattice")  
+install.packages("rgl")  
+install.packages("car")  
+
+library(scatterplot3d)  
+library(lattice)  
+library(car)  
+
+# 1. 3D Scatter Plot using scatterplot3d  
+scatterplot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width,  
+              color = as.numeric(iris$Species),  
+              pch = 19,  
+              main = "3D Scatter Plot of Iris",  
+              xlab = "Sepal Length",  
+              ylab = "Petal Length",  
+              zlab = "Sepal Width")  
+
+# 2. Cloud plot using lattice  
+cloud(Sepal.Length ~ Petal.Length * Sepal.Width,  
+      data = iris,  
+      groups = iris$Species,  
+      auto.key = TRUE,   main = "Cloud Plot: Iris Dataset")  
+
+# 3. scatter3d from car package (interactive 3D plot)  
+scatter3d(Sepal.Length ~ Petal.Length + Sepal.Width | Species,  
+          data = iris,  
+          surface = FALSE,  
+          grid = FALSE)
